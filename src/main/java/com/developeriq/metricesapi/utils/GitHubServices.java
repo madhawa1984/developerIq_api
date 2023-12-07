@@ -40,7 +40,6 @@ public class GitHubServices {
                     httpHeaders.add(ACCEPT_HEADER, GITHUB_CONTENT_TYPE);
                     httpHeaders.add(GITHUB_API_VERSION_HEADER, GITHUB_API_VERSION);
                 }).retrieve()
-                // .bodyToMono(String.class)
                 .bodyToFlux(IssuesDetailsDto.class)
                 .collectList()
                 .doOnError(Throwable::printStackTrace);

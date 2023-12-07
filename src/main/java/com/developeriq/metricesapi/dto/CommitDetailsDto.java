@@ -15,17 +15,19 @@ import java.util.List;
 public class CommitDetailsDto implements Serializable {
     @JsonProperty("sha")
     private String shaValue;
+
     @JsonProperty("node_id")
     private String nodeId;
 
-    private Commit commit;
+   private Commit commit;
 
     private String url;
     @JsonProperty("html_url")
     private String htmlUrl;
 
-    private  String author;
-    private  String commiter;
+    private  Commit.Person author;
+    // private  String commiter;*/
+
     private List<Commit.Parent> parents;
 
     @JsonProperty("comments_url")

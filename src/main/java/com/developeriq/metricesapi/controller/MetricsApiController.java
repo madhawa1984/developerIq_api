@@ -27,11 +27,11 @@ public class MetricsApiController {
                                                       @PathVariable("reponame") String repoName) {
         return metricsService.fetchCommits(owner,repoName);
     }
-    // Add End points to get data from the DB
+
     @GetMapping("/issues/{owner}/{reponame}")
     public Mono<List<IssuesDetailsDto>> listIssuesBydeveloper(@PathVariable("owner") String owner,
                                                               @PathVariable("reponame") String repoName){
-        return gitHubServices.getIssues(owner,repoName);
+        return metricsService.fetchListOfIssues(owner,repoName);
     }
 
     @GetMapping("/pulls/{owner}/{reponame}")
