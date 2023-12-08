@@ -38,6 +38,10 @@ public class MetricsApiController {
     public Mono<List<PullRequestDto>> listPullRequestsBydeveloper(@PathVariable("owner") String owner,
                                                                   @PathVariable("reponame") String repoName){
         return gitHubServices.getPullRequest(owner,repoName);
+        // save pull request
+        // authentication service
+        // docker / kubernetes
+        // pipe line
     }
 
 }

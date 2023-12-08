@@ -49,8 +49,8 @@ public class UserDetails {
     private IssuesDetails assigneeIssuesDetails;
     @ManyToOne(fetch = FetchType.LAZY)
     // once this value changeed to df=ifferent id exception throwa
-    // further when it has id, it will not fIll the column
-    @JoinColumn(name = "ASSIGNEE_IXXXX", referencedColumnName = "id")
+    // further when it has id, it will not fll the column
+    @JoinColumn(name = "ASSIGNEE_IXXXX")
     private IssuesDetails assigneesLst;
 
 

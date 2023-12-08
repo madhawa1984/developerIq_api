@@ -95,6 +95,7 @@ public class MetricsService {
                         IssuesDetails issuesDetails = issuDetBuldr.build(); // THIS IS MAIN ENTITY
                         userDetails.setUserIssuesDetails(issuesDetails);
                         userDetails.setAssigneeIssuesDetails(issuesDetails);
+                        userDetails.setAssigneesLst(issuesDetails);
                         issueDetailsRepository.save(issuesDetails);
 
 
