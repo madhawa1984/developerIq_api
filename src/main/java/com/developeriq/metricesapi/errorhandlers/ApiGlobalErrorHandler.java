@@ -1,5 +1,7 @@
 package com.developeriq.metricesapi.errorhandlers;
 
+import com.developeriq.metricesapi.dto.ValidateTokenResponse;
+import com.developeriq.metricesapi.exception.UnAuthorisedException;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -24,6 +26,14 @@ public class ApiGlobalErrorHandler {
     public ServiceResponse onError(Exception ex) {
         return ServiceResponse.builder().message(ex.getMessage()).build();
     }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ExceptionHandler(WebClientResponseException.Unauthorized.class)
+    public ValidateTokenResponse onAuthError(Exception ex) {
+        return ValidateTokenResponse.builder().message(ex.getMessage()).build();
+    }
+
 
     @Data
     @Builder

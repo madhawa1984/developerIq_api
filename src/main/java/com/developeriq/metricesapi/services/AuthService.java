@@ -27,12 +27,12 @@ public class AuthService {
                 }).bodyValue(ValidateTokenRequest.builder().token(token).build())
                 .retrieve().bodyToMono(ValidateTokenResponse.class)
                 .map(ValidateTokenResponse::isValid)
-                .onErrorResume(throwable -> Mono.error(new UnAuthorisedException("")));
-                /*.onErrorResume(throwable -> {
+                //.onErrorResume(throwable -> Mono.error(new UnAuthorisedException("")));
+                .onErrorComplete(throwable -> {
                     System.out.println("Error is happening");
                     throwable.printStackTrace();
-                    return Mono.just(Boolean.FALSE);
-                });*/
+                    return false;
+                });
                 /*doOnError(throwable -> {
                     System.out.println("Error is happening");
                     throwable.printStackTrace();
