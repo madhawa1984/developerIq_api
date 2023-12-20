@@ -94,7 +94,7 @@
 				</executions>
 				<configuration>
 					<repository>madhawachaminda1984/deviq-metrices-api</repository>
-					<tag>latest</tag>
+					<tag>${git-revision}</tag>
 					<imageTag>latest</imageTag>
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
