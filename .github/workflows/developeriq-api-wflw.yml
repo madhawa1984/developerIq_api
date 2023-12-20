@@ -33,7 +33,7 @@ jobs:
       run:
         #  mvn install 
         #  docker build -t 
-        mvn -U -X -B package  dockerfile:push --file pom.xml
+        mvn -Dgit.hash=${{ github.sha }} -U -X -B package  dockerfile:push --file pom.xml
       env: 
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
