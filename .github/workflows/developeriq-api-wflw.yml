@@ -31,6 +31,8 @@ jobs:
         
     - name: Build with Maven and Push
       run:
+        #  mvn install 
+        #  docker build -t 
         mvn -U -X -B package  dockerfile:push --file pom.xml
       env: 
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
