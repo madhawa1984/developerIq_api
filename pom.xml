@@ -94,7 +94,7 @@
 				</executions>
 				<configuration>
 					<repository>madhawachaminda1984/deviq-metrices-api</repository>
-					<tag>${project.version}</tag>
+					<tag>latest</tag>
 					<imageTag>latest</imageTag>
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
